@@ -16,21 +16,23 @@ public class Ladder {
 		for (int i = 0; i < rows.length; i++) {
 			int[] row = rows[i];
 			
-			if (row[nthOfPerson] == 0) {
-				continue;
-			}
-
-			if (nthOfPerson - 1 >= 0) {
-				int leftValue = row[nthOfPerson - 1];
-				if (leftValue == 1) {
-					nthOfPerson -= 1;
-					continue;
-				}
-			}
-
-			nthOfPerson += 1;
+			nthOfPerson = moveRow(nthOfPerson, row);
 		}
 		
 		return nthOfPerson;
+	}
+
+	private int moveRow(int nthOfPerson, int[] row) {
+		if (row[nthOfPerson] == 0) {
+			return nthOfPerson;
+		}
+
+		if (nthOfPerson - 1 >= 0) {
+			if (row[nthOfPerson - 1] == 1) {
+				return nthOfPerson - 1;
+			}
+		}
+
+		return nthOfPerson + 1;
 	}
 }
