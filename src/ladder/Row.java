@@ -9,7 +9,7 @@ public class Row {
 
 	void drawLine(int startPosition) {
 		persons[startPosition] = 1;
-		persons[startPosition + 1] = 1;
+		persons[startPosition + 1] = -1;
 	}
 
 	int move(int nthOfPerson) {
@@ -17,19 +17,15 @@ public class Row {
 			return nthOfPerson;
 		}
 
-		if (isNotLeftEnd(nthOfPerson) && canLeft(nthOfPerson)) {
-			return nthOfPerson - 1;
+		if (isRightDirection(nthOfPerson)) {
+			return nthOfPerson + 1;
 		}
 
-		return nthOfPerson + 1;
+		return nthOfPerson +=- 1;
 	}
 
-	private boolean canLeft(int nthOfPerson) {
-		return persons[nthOfPerson - 1] == 1;
-	}
-
-	private boolean isNotLeftEnd(int nthOfPerson) {
-		return nthOfPerson - 1 >= 0;
+	private boolean isRightDirection(int nthOfPerson) {
+		return persons[nthOfPerson] == 1;
 	}
 
 	private boolean isNotLine(int nthOfPerson) {
