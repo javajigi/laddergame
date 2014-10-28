@@ -12,7 +12,7 @@ public class Row {
 		persons[startPosition + 1] = 1;
 	}
 
-	int moveRow(int nthOfPerson) {
+	int move(int nthOfPerson) {
 		if (isNotLine(nthOfPerson)) {
 			return nthOfPerson;
 		}
