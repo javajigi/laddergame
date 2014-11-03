@@ -17,4 +17,24 @@ public class LadderTest extends TestCase {
 		assertEquals(1, ladder.run(2));
 		assertEquals(2, ladder.run(3));
 	}
+	
+	public void testDrawLineWhenUnderNoOfRows() throws Exception {
+		try {
+			Ladder ladder = new Ladder(3, 4);
+			ladder.drawLine(-1, 3);
+			fail("IllegalArgumentException 에러가 발생해야 한다.");
+		} catch (IllegalArgumentException e) {
+			assertTrue(true);
+		}
+	}
+	
+	public void testDrawLineWhenOverNoOfRows() throws Exception {
+		try {
+			Ladder ladder = new Ladder(3, 4);
+			ladder.drawLine(3, 3);
+			fail("IllegalArgumentException 에러가 발생해야 한다.");
+		} catch (IllegalArgumentException e) {
+			assertTrue(true);
+		}
+	}
 }
