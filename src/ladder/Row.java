@@ -1,7 +1,7 @@
 package ladder;
 
-public class Row {
-	enum Direction {
+class Row {
+	private enum Direction {
 		LEFT(-1),
 		CENTER(0),
 		RIGHT(1);
@@ -17,9 +17,9 @@ public class Row {
 		}
 	}
 	
-	int[] persons;
+	private int[] persons;
 
-	public Row(int noOfPersons) {
+	Row(int noOfPersons) {
 		persons = new int[noOfPersons];
 	}
 
