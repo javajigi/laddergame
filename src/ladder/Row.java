@@ -37,16 +37,16 @@ class Row {
 		persons[startIndex + 1] = Direction.LEFT.getNo();
 	}
 
-	NaturalNumber move(NaturalNumber startMarker) {
+	Marker move(Marker startMarker) {
 		if (isNoLine(startMarker.toArrayIndex())) {
 			return startMarker;
 		}
 		
 		if (isRightDirection(startMarker.toArrayIndex())) {
-			return new NaturalNumber(startMarker.getNumber() + 1);
+			return startMarker.moveRight();
 		}
 		
-		return new NaturalNumber(startMarker.getNumber() - 1);
+		return startMarker.moveLeft();
 	}
 
 	private boolean isRightDirection(int nthOfPerson) {

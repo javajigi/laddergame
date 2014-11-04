@@ -32,17 +32,17 @@ public class RowTest extends TestCase {
 	}
 	
 	public void testMoveWhenNoLine() throws Exception {
-		NaturalNumber target = row.move(new NaturalNumber(1));
+		Marker target = row.move(new Marker(1));
 		assertEquals(1, target.getNumber());
 
-		target = row.move(new NaturalNumber(3));
+		target = row.move(new Marker(3));
 		assertEquals(3, target.getNumber());
 	}
 	
 	public void testMoveWhenLineLeft() throws Exception {
 		// 0 1 1
 		row.drawLine(new NaturalNumber(2));
-		NaturalNumber target = row.move(new NaturalNumber(3));
+		Marker target = row.move(new Marker(3));
 		assertEquals(2, target.getNumber());
 	}
 	
@@ -50,7 +50,7 @@ public class RowTest extends TestCase {
 		// 0 1 1
 		row.drawLine(new NaturalNumber(2));
 		
-		NaturalNumber target = row.move(new NaturalNumber(2));
+		Marker target = row.move(new Marker(2));
 		assertEquals(3, target.getNumber());
 	}
 }
