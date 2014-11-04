@@ -19,12 +19,14 @@ class Ladder {
 		rows[height.toArrayIndex()].drawLine(startPosition);
 	}
 
-	int run(int nthOfPerson) {
+	int run(NaturalNumber nthOfPerson) {
+		int target = nthOfPerson.getNumber();
 		for (int i = 0; i < rows.length; i++) {
 			Row row = rows[i];
-			nthOfPerson = row.move(nthOfPerson);
+			
+			target = row.move(new NaturalNumber(target));
 		}
 
-		return nthOfPerson;
+		return target;
 	}
 }

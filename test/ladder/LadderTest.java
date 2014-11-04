@@ -12,10 +12,10 @@ public class LadderTest extends TestCase {
 		ladder.drawLine(new NaturalNumber(2), new NaturalNumber(2));
 		ladder.drawLine(new NaturalNumber(3), new NaturalNumber(3));
 		
-		assertEquals(3, ladder.run(0));
-		assertEquals(0, ladder.run(1));
-		assertEquals(1, ladder.run(2));
-		assertEquals(2, ladder.run(3));
+		assertEquals(4, ladder.run(new NaturalNumber(1)));
+		assertEquals(1, ladder.run(new NaturalNumber(2)));
+		assertEquals(2, ladder.run(new NaturalNumber(3)));
+		assertEquals(3, ladder.run(new NaturalNumber(4)));
 	}
 	
 	public void testDrawLineWhenOverNoOfRows() throws Exception {
