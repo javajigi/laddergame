@@ -20,13 +20,12 @@ class Ladder {
 	}
 
 	int run(NaturalNumber nthOfPerson) {
-		int target = nthOfPerson.getNumber();
 		for (int i = 0; i < rows.length; i++) {
 			Row row = rows[i];
 			
-			target = row.move(new NaturalNumber(target));
+			nthOfPerson = row.move(nthOfPerson);
 		}
 
-		return target;
+		return nthOfPerson.getNumber();
 	}
 }
