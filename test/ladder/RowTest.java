@@ -1,10 +1,11 @@
 package ladder;
 
+import core.NaturalNumber;
 import junit.framework.TestCase;
 
 public class RowTest extends TestCase {
 	private Row row;
-	
+
 	@Override
 	protected void setUp() throws Exception {
 		row = new Row(new NaturalNumber(3));
@@ -32,17 +33,17 @@ public class RowTest extends TestCase {
 	}
 	
 	public void testMoveWhenNoLine() throws Exception {
-		Marker target = row.move(new Marker(1));
+		NaturalNumber target = row.move(new Marker(1));
 		assertEquals(1, target.getNumber());
 
-		target = row.move(new Marker(3));
-		assertEquals(3, target.getNumber());
+		target = row.move(new Marker(2));
+		assertEquals(2, target.getNumber());
 	}
 	
 	public void testMoveWhenLineLeft() throws Exception {
 		// 0 1 1
 		row.drawLine(new NaturalNumber(2));
-		Marker target = row.move(new Marker(3));
+		NaturalNumber target = row.move(new Marker(3));
 		assertEquals(2, target.getNumber());
 	}
 	
@@ -50,7 +51,7 @@ public class RowTest extends TestCase {
 		// 0 1 1
 		row.drawLine(new NaturalNumber(2));
 		
-		Marker target = row.move(new Marker(2));
+		NaturalNumber target = row.move(new Marker(2));
 		assertEquals(3, target.getNumber());
 	}
 }

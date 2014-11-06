@@ -12,4 +12,5 @@ public class MarkerTest extends TestCase {
 		Marker marker = new Marker(3);
 		assertEquals(new Marker(2), marker.moveLeft());
 	}
+	
 }

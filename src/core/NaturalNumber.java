@@ -1,4 +1,4 @@
-package ladder;
+package core;
 
 public class NaturalNumber {
 	private int number;

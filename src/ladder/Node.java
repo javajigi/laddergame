@@ -1,17 +1,16 @@
 package ladder;
 
-
 class Node {
-	enum Direction {
-		CENTER, LEFT, RIGHT;
+	private enum Direction {
+		LEFT, CENTER, RIGHT;
 	}
 
 	private Direction direction;
-	
+
 	private Node(Direction direction) {
 		this.direction = direction;
 	}
-	
+
 	void changeRight() {
 		this.direction = Direction.RIGHT;
 	}
@@ -20,12 +19,20 @@ class Node {
 		this.direction = Direction.LEFT;
 	}
 	
+	boolean isLeftDirection() {
+		return this.direction == Direction.LEFT;
+	}
+	
+	boolean isRightDirection() {
+		return this.direction == Direction.RIGHT;
+	}
+	
 	Marker move(Marker marker) {
-		if (this.direction == Direction.RIGHT) {
+		if (isRightDirection()) {
 			return marker.moveRight();
 		}
 		
-		if (this.direction == Direction.LEFT) {
+		if (isLeftDirection()) {
 			return marker.moveLeft();
 		}
 		
@@ -39,7 +46,7 @@ class Node {
 	static Node createRightNode() {
 		return new Node(Direction.RIGHT);
 	}
-
+	
 	static Node createLeftNode() {
 		return new Node(Direction.LEFT);
 	}
